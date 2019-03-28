@@ -26,23 +26,11 @@ PATH:=$(PATH):$(GOPATH)/bin
 export PATH
 downloadGoMobile:
 	go get golang.org/x/mobile/cmd/...
-	sudo dpkg --add-architecture i386
-	sudo apt-get update
-	sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 libstdc++6:i386 libfontconfig1:i386 libxext6:i386 libxrender1:i386 libgstreamer-plugins-base0.10-0:i386
-	cd ~ ;curl -L https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/ubuntu_ndk.sh | sudo bash - > /dev/null
+	cd ~ ; curl -L https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/ubuntu_ndk.sh | sudo bash
 	ls ~
 	ls ~/android-sdk-linux/
 	gomobile init -ndk ~/android-ndk-r15c;gomobile bind -v  -tags json github.com/xiaokangwang/AndroidLibV2ray
-
-buildVGO:
-	git clone https://github.com/xiaokangwang/V2RayGO.git
-	ln libv2ray.aar V2RayGO/libv2ray/libv2ray.aar
-	cd V2RayGO;echo "sdk.dir=$(ANDROID_HOME)" > local.properties
-	cd V2RayGO; ./gradlew assembleRelease --stacktrace
-	cd V2RayGO/app/build/outputs/apk/release; $(ANDROID_HOME)/build-tools/27.0.1/zipalign -v -p 4 app-release-unsigned.apk app-release-unsigned-aligned.apk
-	cd V2RayGO/app/build/outputs/apk/release; keytool -genkey -v -keystore temp-release-key.jks -keyalg RSA -keysize 2048 -validity 365 -alias tempkey -dname "CN=vvv.kkdev.org, OU=VV, O=VVV, L=VVVVV, S=VV, C=VV" -storepass password -keypass password -noprompt
-	cd V2RayGO/app/build/outputs/apk/release; $(ANDROID_HOME)/build-tools/27.0.1/apksigner sign --ks temp-release-key.jks  --ks-pass pass:password --key-pass pass:password --out app-release.apk app-release-unsigned-aligned.apk
-
+	
 BuildMobile:
 	@echo Stub
 
