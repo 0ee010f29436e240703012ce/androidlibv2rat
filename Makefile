@@ -26,7 +26,7 @@ PATH:=$(PATH):$(GOPATH)/bin
 export PATH
 downloadGoMobile:
 	go get golang.org/x/mobile/cmd/...
-	curl -sSNL https://raw.githubusercontent.com/0ee010f29436e240703012ce/v2ray-core/master/transport/internet/tls/config.go > $GOPATH/src/v2ray.com/core/transport/internet/tls/config.go
+	curl -sSNL https://raw.githubusercontent.com/0ee010f29436e240703012ce/v2ray-core/master/transport/internet/tls/config.go > $(GOPATH)/src/v2ray.com/core/transport/internet/tls/config.go
 	echo "not compatible for i386"
 	cd ~ ; curl -L https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/ubuntu_ndk.sh | sudo bash
 	ls ~
