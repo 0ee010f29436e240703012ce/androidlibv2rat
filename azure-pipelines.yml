@@ -46,6 +46,6 @@ steps:
 - task: GithubRelease@0 
   displayName: 'GitHub Release'      
   inputs:
-    githubConnection: 0ee010f29436e240703012ce
+    githubConnection: 0ee010f29436e240703012ceG
     repositoryName: 0ee010f29436e240703012ce/AndroidLibV2ray        
     assets: $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar
