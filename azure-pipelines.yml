@@ -31,7 +31,6 @@ steps:
       export PATH=/home/vsts/sdk/go1.12beta2/bin:$PATH
       export GOROOT=/home/vsts/sdk/go1.12beta2
       go version
-      exit 1
   displayName: 'setup go1.12beta2'
 
 - script: |
