@@ -15,12 +15,6 @@ variables:
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
-  steps:
-  - checkout: self
-  - task: GoTool@0
-    inputs:
-      version: '1.11'
-
 steps:
 - script: |
     mkdir -p '$(GOBIN)'
