@@ -15,6 +15,7 @@ steps:
   inputs:
     version: '1.12.1'
 - script: |
+    apt purge man-db
     mkdir -p '$(GOBIN)'
     mkdir -p '$(GOPATH)/pkg'
     mkdir -p '$(modulePath)'
