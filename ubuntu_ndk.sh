@@ -11,7 +11,7 @@ sudo apt-get install -y unzip make expect # NDK stuff
 # Get SDK tools (link from https://developer.android.com/studio/index.html#downloads)
 wget -q https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
 mkdir android-sdk-linux
-unzip sdk*.zip -d android-sdk-linux
+unzip -q sdk*.zip -d android-sdk-linux
 
 # Get NDK (https://developer.android.com/ndk/downloads/index.html)
 # wget -q https://dl.google.com/android/repository/android-ndk-r15c-linux-x86_64.zip
@@ -47,7 +47,7 @@ curl -L -o reduce.awk $reduceout
 
 sudo apt-get install gawk
 
-./sdkmanager --verbose --list |awk -f parse.awk > ~/package_to_install
+./sdkmanager --verbose --list | awk -f parse.awk > ~/package_to_install
 
 readarray -t filenames < $HOME/package_to_install
 
@@ -62,7 +62,7 @@ yes|./sdkmanager --verbose "${filenames[@]}" |awk -f reduce.awk
 # ./android update sdk --no-ui --all --filter 1,2,3,<...>,N
 # where N is the number of the package in the list (see previous command)
 
-./sdkmanager "ndk-bundle"
+./sdkmanager "ndk-bundle" > /dev/null
 
 # Add the directory containing executables in PATH so that they can be found
 echo 'export ANDROID_HOME=$HOME/android-sdk-linux' >> ~/.bashrc
