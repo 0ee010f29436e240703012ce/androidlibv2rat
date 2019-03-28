@@ -6,7 +6,7 @@ pool:
 
 variables:
   GOBIN:  '$(GOPATH)/bin' # Go binaries path
-  GOROOT: '/usr/local/go1.12beta2' # Go installation path
+  GOROOT: '/usr/local/go1.12.1' # Go installation path
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
@@ -28,8 +28,10 @@ steps:
 - script: |
       go get golang.org/dl/go1.12beta2
       go1.12beta2 download
+      ls /root/sdk
       export PATH=/root/sdk/go1.12beta2/bin:$PATH
       export GOROOT=/root/sdk/go1.12beta2
+      go version
   displayName: 'setup go1.12beta2'
 
 - script: |
