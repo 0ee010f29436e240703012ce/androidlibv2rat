@@ -55,6 +55,8 @@ steps:
       cd $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray
       make all
       make downloadGoMobile
+      pwd
+      ls
   displayName: 'build aar'
     
 - task: GithubRelease@0
@@ -66,4 +68,4 @@ steps:
     tagSource: 'manual'
     tag: '$(Build.BuildNumber)'
     assets: |
-         '$(GOPATH)/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar'
+         $(system.defaultWorkingDirectory)/gopath/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar'
