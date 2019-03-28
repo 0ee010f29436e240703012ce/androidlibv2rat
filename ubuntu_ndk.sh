@@ -74,6 +74,6 @@ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.
 source ~/.bashrc
 
 # Make sure you can execute 32 bit executables if this is 64 bit machine, otherwise skip this
-sudo dpkg --add-architecture i386
-sudo apt-get update
-sudo apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
+#sudo dpkg --add-architecture i386
+#sudo apt-get update
+#sudo apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
