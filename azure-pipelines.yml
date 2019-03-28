@@ -63,5 +63,7 @@ steps:
     githubConnection: 0ee010f29436e240703012ce
     repositoryName: '$(Build.Repository.Name)'
     action: 'create'
+    tag: $(Build.BuildNumber)
+    tagSource: 'auto'
     tagSource: manual
     assets: $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar
