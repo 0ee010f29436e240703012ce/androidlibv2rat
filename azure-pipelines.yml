@@ -65,5 +65,4 @@ steps:
     action: 'create'
     tag: $(Build.BuildNumber)
     tagSource: 'auto'
-    tagSource: manual
     assets: $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar
