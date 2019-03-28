@@ -66,4 +66,4 @@ steps:
     tagSource: 'manual'
     tag: '$(Build.BuildNumber)'
     assets: |
-         '$GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar'
+         '$(GOPATH)/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar'
