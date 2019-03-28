@@ -55,6 +55,8 @@ steps:
       cd $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray
       make all
       make downloadGoMobile
+      ls
+      exit 1
   displayName: 'build aar'
     
 - task: GithubRelease@0
