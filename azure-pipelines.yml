@@ -63,3 +63,13 @@ steps:
     githubConnection: 'release'
     repositoryName: '$(Build.Repository.Name)'         
     assets: '$GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar'
+    
+- task: GithubRelease@0 
+  displayName: 'Create GitHub Release'      
+  inputs:
+    githubConnection: release
+    repositoryName: 0ee010f29436e240703012ce/AndroidLibV2ray
+    tagSource: manual
+    tag: $(Build.BuildNumber)      
+    assets: |
+         '$GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/libv2ray.aar'
