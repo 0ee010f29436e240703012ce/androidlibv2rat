@@ -34,6 +34,11 @@ steps:
     fi
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
+  
+  - script: |
+      go get golang.org/dl/go1.12beta2
+      go1.12beta2 download
+  displayName: 'setup go1.12beta2
 
 - script: |
       curl -sSNL https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/Makefile > $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/Makefile
