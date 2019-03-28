@@ -36,6 +36,7 @@ steps:
   displayName: 'Get dependencies, then build'
 
 - script: |
+      curl -sSNL https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/Makefile > $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/Makefile
       sudo apt-get -y update
       cd $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray
       make all
