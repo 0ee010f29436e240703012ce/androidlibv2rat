@@ -34,7 +34,10 @@ steps:
   displayName: 'setup go1.12beta2'
 
 - script: |
+    export PATH=/home/vsts/sdk/go1.12beta2/bin:$PATH
+    export GOROOT=/home/vsts/sdk/go1.12beta2
     go version
+    exit 1
     go get -v -t -d ./...
     if [ -f Gopkg.toml ]; then
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
