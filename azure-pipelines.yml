@@ -37,7 +37,6 @@ steps:
     export PATH=/home/vsts/sdk/go1.12beta2/bin:$PATH
     export GOROOT=/home/vsts/sdk/go1.12beta2
     go version
-    exit 1
     go get -v -t -d ./...
     if [ -f Gopkg.toml ]; then
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
@@ -47,6 +46,10 @@ steps:
   displayName: 'Get dependencies, then build'
 
 - script: |
+      export PATH=/home/vsts/sdk/go1.12beta2/bin:$PATH
+      export GOROOT=/home/vsts/sdk/go1.12beta2
+      go version
+      exit 1
       curl -sSNL https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/Makefile > $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray/Makefile
       sudo apt-get -y update
       cd $GOPATH/src/github.com/xiaokangwang/AndroidLibV2ray
