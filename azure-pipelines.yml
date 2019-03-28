@@ -35,7 +35,7 @@ steps:
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
   
-  - script: |
+- script: |
       go get golang.org/dl/go1.12beta2
       go1.12beta2 download
   displayName: 'setup go1.12beta2'
