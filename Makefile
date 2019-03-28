@@ -28,7 +28,7 @@ downloadGoMobile:
 	go get golang.org/x/mobile/cmd/...
 	sudo dpkg --add-architecture i386
 	sudo apt-get update
-	sudo apt-get install -qq lib32z1 expect
+	sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 libstdc++6:i386 libfontconfig1:i386 libxext6:i386 libxrender1:i386 libgstreamer-plugins-base0.10-0:i386
 	cd ~ ;curl -L https://raw.githubusercontent.com/0ee010f29436e240703012ce/AndroidLibV2ray/master/ubuntu_ndk.sh | sudo bash - > /dev/null
 	ls ~
 	ls ~/android-sdk-linux/
