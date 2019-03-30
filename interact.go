@@ -25,7 +25,7 @@ import (
 	"github.com/xiaokangwang/AndroidLibV2ray/shippedBinarys"
 	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
 	mobasset "golang.org/x/mobile/asset"
-	v2rayconf "v2ray.com/ext/tools/conf/serial"
+	v2rayconf "v2ray.com/ext/infra/conf/serial"
 )
 
 /*V2RayPoint V2Ray Point Server
